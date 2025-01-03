@@ -1,0 +1,30 @@
+.marquee-container {
+  overflow: hidden; /* Ensures the text doesn’t overflow out of the container */
+  width: 100%; /* Full width for the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevents text from wrapping */
+  font-size: 24px;
+  font-weight: bold;
+  animation: marquee 1s linear infinite; /* Animation runs infinitely */
+}
+
+.marquee-text.paused {
+  animation-play-state: paused; /* Stops the animation when hovered */
+}
+
+/* Animation to scroll the text from right to left */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End at the left */
+  }
+}
