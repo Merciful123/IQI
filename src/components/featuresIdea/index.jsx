@@ -8,7 +8,8 @@ const AnimatedComponent = () => {
   const circleRef = useRef(null);
   const rightTextRef = useRef(null);
 
-  const leftTexts = ["Text 1", "Text 2", "Text 3", "Text 4", "Text 5"];
+  const leftTexts = ["overload", "redundancy", "burden", "complex", "inefficient"];
+  const rightTexts = ["reducing overload", "saving time", "precision", "smart work", "perfection"];
 
   useEffect(() => {
     // GSAP Stagger Animation for Left Texts (Falling below the circle and then moving to the circle)
@@ -21,7 +22,8 @@ const AnimatedComponent = () => {
           opacity: 0,
           scale: 0.2, // Shrink the text as it reaches the circle
           stagger: 0.5,
-          duration: 3,
+          delay: 5,
+          duration: 5,
           repeat: -1, // Repeat infinitely
           yoyo: false, // Do not reverse the animation
           onComplete: () => {
@@ -33,8 +35,9 @@ const AnimatedComponent = () => {
                 {
                   x: circleRef.current ? circleRef.current.offsetTop +0 : 0, // Fall below the circle
                   opacity: 0,
-                  scale: 0.2, // Shrink the text as it reaches the circle
-                  //   stagger: 1,
+                  scale: 0.5, // Shrink the text as it reaches the circle
+                  stagger: 1,
+                  delay:5,
                   duration: 1,
                   repeat: -1,
                   yoyo: false,
@@ -66,8 +69,8 @@ const AnimatedComponent = () => {
           opacity: 1,
           x: 0,
           stagger: 0.5,
-          duration: 1,
-          delay: 2,
+          duration: 2,
+          delay: 10,
           repeat: -1, // Infinite repetition
           yoyo: true, // Reverses the animation
         }
@@ -76,14 +79,17 @@ const AnimatedComponent = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center w-full min-h-[90vh] px-10 overflow-x-hidden">
+    <div className="flex justify-around items-center w-full min-h-[90vh] px-10 overflow-x-hidden">
       {/* Left Section (Random Texts falling below the circle and disappearing) */}
       <div
         className="flex flex-col justify-center items-start w-1/4"
         ref={leftTextRef}
       >
         {leftTexts.map((text, index) => (
-          <div key={index} className="text-lg mb-2 ">
+          <div
+            key={index}
+            className="text-xl mb-2 border-1 rounded-lg px-10 py-2 bg-blue-300"
+          >
             {text}
           </div>
         ))}
@@ -92,7 +98,7 @@ const AnimatedComponent = () => {
       {/* Middle Circle (Rotating Circle with Desktop and User SVG icon) */}
       <div
         ref={circleRef}
-        className="w-[200px] h-[200px] rounded-full flex justify-center items-center"
+        className="w-[300px] h-[300px] rounded-full flex justify-center items-center"
         style={{
           position: "relative",
           zIndex: 1, // Ensure it's above text when animating
@@ -107,8 +113,11 @@ const AnimatedComponent = () => {
         className="flex flex-col justify-center items-start w-1/4"
         ref={rightTextRef}
       >
-        {leftTexts.map((text, index) => (
-          <div key={index} className="text-lg mb-2">
+        {rightTexts.map((text, index) => (
+          <div
+            key={index}
+            className="text-lg mb-2 border-1 rounded-lg px-10 py-2 bg-blue-300"
+          >
             {text}
           </div>
         ))}

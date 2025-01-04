@@ -45,7 +45,7 @@ export default function Navbarmenu() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      className="p-[1rem] bg-transparent !overflow-x-hidden"
+      className="p-[1rem] bg-transparent fixed shadow-[0_2px_5px_rgba(59,130,246,0.5)]"
     >
       <NavbarContent>
         {/* <NavbarMenuToggle
@@ -60,27 +60,35 @@ export default function Navbarmenu() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#" className="hover:no-underline">
             Features
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link aria-current="page" href="#">
+          <Link aria-current="page" href="#" className="hover:no-underline">
             Customers
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#" className="hover:no-underline">
             Integrations
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href="#" className="hover:no-underline">
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button
+            as={Link}
+            color="primary"
+            href="#"
+            variant="flat"
+            className="hover:no-underline"
+          >
             Sign Up
           </Button>
         </NavbarItem>

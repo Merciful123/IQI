@@ -4,20 +4,24 @@ import Navbar from "../components/navbar";
 import backgroundImage from "../assets/background.png";
 import AnimatedComponent from "../components/featuresIdea";
 import Marquee from "../components/extra";
+import ScrollComponent from "../components/moreItems";
+import Team from "../components/team";
+import JoinWaitlist from "../components/subscribe";
 
 const LandingPage = () => {
   return (
-    <div
-      className="min-h-screen grid grid-rows-[auto_1fr_auto] !overflow-x-hidden"
-    >
+    <div className="min-h-screen grid grid-rows-[auto_1fr_auto]  max-w-full mx-auto">
       <Navbar />
       <div
-        className="bg-cover  bg-no-repeat w-full h-fit"
+        className="bg-cover  bg-no-repeat max-w-full mx-auto h-fit !overflow-x-hidden "
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <Hero />
         <AnimatedComponent />
-        <Marquee/>
+        <Marquee />
+        <ScrollComponent />
+        <Team />
+        <JoinWaitlist/>
       </div>
 
       <Footer />

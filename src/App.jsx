@@ -3,7 +3,7 @@ import LandingPage from "./pages/LandingPage";
 
 const App = () => {
   return (
-    <div className="!overflow-x-hidden">
+    <div className="">
       <LandingPage />
     </div>
   );

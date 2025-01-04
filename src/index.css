@@ -34,7 +34,6 @@ body, html {
 
 .container {
   max-width: 100%;
-  /* overflow: hidden; */
 }
 
 /* Make sure images or other elements don't cause overflow */
