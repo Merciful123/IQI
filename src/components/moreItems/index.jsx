@@ -11,110 +11,112 @@ import privacy from "../../assets/privacy.webp";
 const ScrollComponent = () => {
   const containerRef = useRef(null);
 
+    const features = [
+      {
+        title: "Effortless Documentation For Smarter Healthcare",
+        description:
+          "Automate your documentation process with Neev - seamless, accurate, and ready for your EMRs.",
+        items: [
+          {
+            icon: conversation,
+            text: "Transcribe Conversations Record and summarise doctor-patient interactions with speaker diarisation.",
+          },
+          {
+            icon: patient,
+            text: "Empower Patients Share Patient Visit Summaries (PVS) for continuity in care.",
+          },
+          {
+            icon: integration,
+            text: "Integrate Seamlessly Send summaries directly to EMR.",
+          },
+        ],
+        image: docu,
+      },
+      {
+        title: "AI-Powered Transcription",
+        description:
+          "Accurately capture and convert doctor-patient conversations into structured documentation.",
+        items: [
+          {
+            icon: model,
+            text: "Real-Time Voice Recognition for quick documentation.",
+          },
+          {
+            icon: rag,
+            text: "Patient-friendly summaries for better understanding.",
+          },
+          {
+            icon: privacy,
+            text: "Secure and Private Ensures patient data confidentiality.",
+          }, // Corrected duplicate text
+        ],
+        image: ai2,
+      },
+    ];
+
   return (
-    <div
-      className="flex lg:flex-col max-w-[100%] items-center overflow-x-hidden mx-auto mt-10"
-      ref={containerRef}
-    >
-      {/* First Section */}
-      <div
-        className="flex justify-around items-center  gap-5 mr-4  mt-5  overflow-x-hidden mx-auto"
-        // eslint-disable-next-line react/no-unknown-property
-        uk-scrollspy="cls: uk-animation-slide-left; repeat: true; target: > div:nth-child(1); delay:300"
-      >
-        {/* Left (Text + Features) */}
-        <div className="w-[40%]">
-          <h1 className="text-4xl text-blue-500 mb-2">
-            Effortless Documentation For Smarter Healthcare
-          </h1>
-          <p className="text-2xl">
-            Automate your documentation process with Neev - seamless, accurate,
-            and ready for your EMRs.
-          </p>
-          <div className="flex justify-start items-center gap-5 p-5">
-            <div>
-              <img src={conversation} alt="" className="h-[2rem] w-[2rem]" />
+    <div className="mt-10 overflow-x-hidden lg:px-[2rem]">
+      {" "}
+      {/* Removed mx-auto from here for better mobile handling */}
+      <div className="container mx-auto px-4">
+        {" "}
+        {/* Added container for responsiveness */}
+        {features.map((section, index) => (
+          <div
+            key={index}
+            className={`flex flex-col lg:flex-row items-center gap-5 py-8 ${
+              // Added py-8 for vertical spacing
+              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse" // Alternate image placement
+            }`}
+            ref={containerRef}
+          >
+            <div
+              className="w-full lg:w-1/2" // Responsive widths
+              // eslint-disable-next-line react/no-unknown-property
+              uk-scrollspy={`cls: uk-animation-slide-${
+                index % 2 === 0 ? "left" : "right"
+              }; repeat: true; target: > div:nth-child(1); delay:300`}
+            >
+              <div>
+                <h1 className="text-3xl lg:text-4xl text-blue-500 mb-2 leading-tight">
+                  {section.title}
+                </h1>
+                <p className="text-lg lg:text-2xl leading-relaxed">
+                  {section.description}
+                </p>
+                <div className="mt-4">
+                  {section.items.map((item, itemIndex) => (
+                    <div
+                      key={itemIndex}
+                      className="flex items-center gap-5 p-4" // Reduced padding
+                    >
+                      <img src={item.icon} alt="" className="h-8 w-8" />{" "}
+                      {/* Adjusted icon size */}
+                      <p className="text-base lg:text-lg">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <p>
-              Transcribe Conversations Record and summarise doctor-patient
-              interactions with speaker diarisation.
-            </p>
-          </div>
-          <div className="flex justify-start items-center gap-5 p-5">
-            <div>
-              <img src={patient} alt="" className="h-[2rem] w-[2rem]" />
-            </div>
-            <p>
-              Empower Patients Share Patient Visit Summaries (PVS) for
-              continuity in care.
-            </p>
-          </div>
-          <div className="flex justify-start items-center gap-5 p-5">
-            <div>
-              <img src={integration} alt="" className="h-[2rem] w-[2rem]" />
-            </div>
-            <p>Integrate Seamlessly Send summaries directly to EMR.</p>
-          </div>
-        </div>
 
-        {/* Right (Image) */}
-        <div
-          className="w-[40%] uk-scrollspy-inview uk-animation-slide-right"
-          // eslint-disable-next-line react/no-unknown-property
-          uk-scrollspy="cls: uk-animation-slide-right; repeat: true; target: > div:nth-child(1); delay:300"
-        >
-          <div>
-            <img src={docu} alt="Section Image" className="max-w-[100%]" />
-          </div>
-        </div>
-      </div>
-
-      {/* Second Section */}
-      <div className="flex justify-around items-center  gap-5 mr-4  mt-10">
-        {/* Right (Image) */}
-        <div
-          className="w-[40%] "
-          // eslint-disable-next-line react/no-unknown-property
-          uk-scrollspy="cls: uk-animation-slide-left; repeat: true; target: > div:nth-child(1); delay:300"
-        >
-          <div>
-            <img src={ai2} alt="Section Image" className="max-w-[100%]" />
-          </div>
-        </div>
-        {/* Left (Text + Features) */}
-        <div
-          className="w-[40%]"
-          // eslint-disable-next-line react/no-unknown-property
-          uk-scrollspy="cls: uk-animation-slide-right; repeat: true; target: > div:nth-child(1); delay:300"
-        >
-          <div>
-            <h1 className="text-4xl text-blue-500 mb-2">
-              AI-Powered Transcription
-            </h1>
-            <p className="text-2xl">
-              Accurately capture and convert doctor-patient conversations into
-              structured documentation.
-            </p>
-            <div className="flex justify-start items-center gap-5 p-5">
+            <div
+              className="w-full lg:w-1/2"
+              // eslint-disable-next-line react/no-unknown-property
+              uk-scrollspy={`cls: uk-animation-slide-${
+                index % 2 === 0 ? "right" : "left"
+              }; repeat: true; target: > div:nth-child(1); delay:300`}
+            >
               <div>
-                <img src={model} alt="" className="h-[2rem] w-[2rem]" />
+                <img
+                  src={section.image}
+                  alt="Section Image"
+                  className="w-full"
+                />{" "}
+                {/* Responsive image */}
               </div>
-              <p>Real-Time Voice Recognition for quick documentation.</p>
-            </div>
-            <div className="flex justify-start items-center gap-5 p-5">
-              <div>
-                <img src={rag} alt="" className="h-[2rem] w-[2rem]" />
-              </div>
-              <p>Patient-friendly summaries for better understanding.</p>
-            </div>
-            <div className="flex justify-start items-center gap-5 p-5">
-              <div>
-                <img src={privacy} alt="" className="h-[2rem] w-[2rem]" />
-              </div>
-              <p>Patient-friendly summaries for better understanding.</p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

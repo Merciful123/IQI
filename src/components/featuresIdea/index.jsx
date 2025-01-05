@@ -79,10 +79,12 @@ const AnimatedComponent = () => {
   }, []);
 
   return (
-    <div className="flex justify-around items-center w-full min-h-[90vh] px-10 overflow-x-hidden">
+    <div className="flex flex-col lg:flex-row justify-around items-center w-full min-h-[90vh] px-4 overflow-x-hidden">
+      {" "}
+      {/* Added flex-col for mobile */}
       {/* Left Section (Random Texts falling below the circle and disappearing) */}
       <div
-        className="flex flex-col justify-center items-start w-1/4"
+        className="flex flex-col justify-center items-start w-full lg:w-1/4"
         ref={leftTextRef}
       >
         {leftTexts.map((text, index) => (
@@ -94,11 +96,10 @@ const AnimatedComponent = () => {
           </div>
         ))}
       </div>
-
       {/* Middle Circle (Rotating Circle with Desktop and User SVG icon) */}
       <div
         ref={circleRef}
-        className="w-[300px] h-[300px] rounded-full flex justify-center items-center"
+        className="w-[300px] h-[300px] rounded-full flex justify-center items-center mx-auto lg:mx-0" // Centered on desktop
         style={{
           position: "relative",
           zIndex: 1, // Ensure it's above text when animating
@@ -107,10 +108,9 @@ const AnimatedComponent = () => {
         {/* Desktop with User SVG Icon */}
         <img src={desktop} alt="" />
       </div>
-
       {/* Right Section (Text Appears from Circle) */}
       <div
-        className="flex flex-col justify-center items-start w-1/4"
+        className="flex flex-col justify-center items-start w-full lg:w-1/4"
         ref={rightTextRef}
       >
         {rightTexts.map((text, index) => (
