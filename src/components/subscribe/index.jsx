@@ -1,8 +1,9 @@
+import "./index.css";
 
 const JoinWaitlist = () => {
   
   return (
-    <div className="pt-[80px] md:pt-[160px]">
+    <div className="pt-[80px] md:pt-[150px]">
       <div
         className="w-full bg-gradient-to-r from-[#607AFF] from-30% via-[#8DD3FF] via-90% to-[#B4D0FF] to-100% py-16 md:py-24"
         // eslint-disable-next-line react/no-unknown-property
@@ -30,6 +31,7 @@ const JoinWaitlist = () => {
               Join Waitlist
             </button>
           </form>
+          
         </div>
       </div>
     </div>
