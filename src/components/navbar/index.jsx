@@ -13,14 +13,15 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import neevLogo from "../../assets/neevLogo.svg";
+// import neevLogo from "../../assets/neevLogo.svg";
+import logo from "../../assets/logo.jpg"
 
 
 export const AcmeLogo = () => {
   return (
     <>
       <div>
-        <img src={neevLogo} alt="Logo" />
+        <img src={logo} alt="Logo" className="w-[100px]"/>
       </div>
     </>
   );
@@ -30,16 +31,12 @@ export default function Navbarmenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact Us", href: "#contact-us" },
+    { name: "Company Profile", href: "#company-profile" },
   ];
 
   return (
@@ -54,44 +51,75 @@ export default function Navbarmenu() {
         /> */}
         <NavbarBrand className="flex gap-4">
           <AcmeLogo />
-          <p className=" text-4xl text-inherit">neev</p>
+          {/* <p className=" text-4xl text-inherit">neev</p> */}
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-10" justify="end">
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href="/#home"
             className="hover:no-underline relative group"
           >
-            Features
+            Home
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link
+            color="foreground"
             aria-current="page"
-            href="#"
+            href="#about"
             className="hover:no-underline relative group"
           >
-            Customers
+            About
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href="#services"
             className="hover:no-underline relative group"
           >
-            Integrations
+            Services
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            color="foreground"
+            href="#projects"
+            className="hover:no-underline relative group"
+          >
+            Projects
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            color="foreground"
+            href="#services"
+            className="hover:no-underline relative group"
+          >
+            Company Profile
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            color="foreground"
+            href="#contact-us"
+            className="hover:no-underline relative group"
+          >
+            Contact Us
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+      <NavbarContent justify="end" className="sm:hidden">
+        {/* <NavbarItem className="hidden lg:flex">
           <Link href="#" className="hover:no-underline">
             Login
           </Link>
@@ -106,13 +134,13 @@ export default function Navbarmenu() {
           >
             Sign Up
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden min-[1024px]:hidden"
         />
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="mt-10">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -124,10 +152,10 @@ export default function Navbarmenu() {
               //     ? "danger"
               //     : "foreground"
               // }
-              href="#"
+              href={item?.href}
               size="lg"
             >
-              {item}
+              {item?.name}
             </Link>
           </NavbarMenuItem>
         ))}

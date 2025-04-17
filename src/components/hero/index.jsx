@@ -1,4 +1,5 @@
-import video from "../../assets/neev.mp4";
+// import video from "../../assets/neev.mp4";
+import hero from "../../assets/HERO-IMAGE.jpg";
 import { useEffect, useRef, useState } from "react";
 
 const Hero = () => {
@@ -44,7 +45,7 @@ const Hero = () => {
   }, [charIndex, isDeleting, wordIndex]);
 
   return (
-    <section className="hero pt-20 pb-10 mt-32 !overflow-x-hidden">
+    <section className="hero pt-20 pb-10 mt-20 !overflow-x-hidden" id="home">
       <div className="container mx-auto px-4">
         {" "}
         {/* Added container */}
@@ -61,7 +62,9 @@ const Hero = () => {
             <h1 className="text-3xl max-lg:text-xl lg:text-4xl font-bold mb-4 leading-tight">
               {" "}
               {/* Responsive font sizes */}
-              <span>Connecting Patients and Providers Through </span>
+              <div>Welcome to</div>
+              <div className="text-5xl text-blue-500">MSD Engineering</div>
+              <span>Connecting Services and Providers Through </span>
               <span ref={precisionTextRef} className="font-bold text-blue-500 ">
                 {precisionText}|
               </span>
@@ -69,9 +72,9 @@ const Hero = () => {
             <p className="text-base lg:text-lg text-gray-600 leading-relaxed mt-4">
               {" "}
               {/* Responsive font sizes */}
-              Making healthcare simple, smart, and more human-centric by
-              reducing admin work, saving time, and enabling doctors to focus on
-              what truly matters - Patients.
+              Making services simple, smart, and more human-centric by
+              reducing admin work, saving time, and enabling customers to focus on
+              what truly matters - Quality works.
             </p>
           </div>
           {/* Right Section: Video */}
@@ -81,7 +84,7 @@ const Hero = () => {
             // eslint-disable-next-line react/no-unknown-property
             uk-scrollspy="cls: uk-animation-slide-right; repeat: true; delay:300"
           >
-            <video
+            {/* <video
               className="w-full h-auto object-cover rounded-[12px] border-solid border-[hsla(212, 100%, 47%, 1)] border-[5px]"
               autoPlay
               loop
@@ -89,7 +92,10 @@ const Hero = () => {
             >
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
+            <div className="w-full h-auto object-cover rounded-[12px] ">
+              <img src={hero} alt="image" className="rounded-[12px]" />
+            </div>
           </div>
         </div>
       </div>

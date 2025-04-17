@@ -1,13 +1,19 @@
-import logo from "../../assets/neevLogo.svg";
+import logo from "../../assets/logo.jpg";
 
 const Footer = () => {
   const footerLinks = [
-    "Career",
-    "Contact us",
-    "Our centers",
-    "About us",
-    "Book a call",
-    "Our journey",
+    "Electrical",
+    "Mechanical",
+    "HVAC",
+    "Extra Low Voltage",
+    "Construction",
+    "Infrastructure",
+    "What We Do",
+    "Our Projects",
+    "Company Profile",
+    "About Us",
+    "Contact Us",
+    "FAQ"
   ];
 
   return (
@@ -25,9 +31,9 @@ const Footer = () => {
           <div className="flex items-center justify-center mb-4 lg:mb-0">
             {" "}
             {/* Added margin bottom for mobile */}
-            <img src={logo} alt="logo" className="h-10" />{" "}
+            <img src={logo} alt="logo" className="h-20 w-40" />{" "}
             {/* Set a height for the logo */}
-            <div className="text-2xl ml-2">neev</div>{" "}
+            {/* <div className="text-2xl ml-2">neev</div>{" "} */}
             {/* Added margin left for spacing */}
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-10 text-center">

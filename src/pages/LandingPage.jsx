@@ -3,10 +3,12 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import backgroundImage from "../assets/background.png";
 import AnimatedComponent from "../components/featuresIdea";
-import Marquee from "../components/extra";
 import ScrollComponent from "../components/moreItems";
 import Team from "../components/team";
 import JoinWaitlist from "../components/subscribe";
+import OurServices from "../components/ourServices";
+import WhyChooseUs from "../components/whyChoose";
+import OurClients from "../components/extra";
 
 const LandingPage = () => {
   return (
@@ -18,9 +20,11 @@ const LandingPage = () => {
       >
         <Hero />
         <AnimatedComponent />
-        <Marquee />
-        <ScrollComponent />
-        <Team />
+        <OurClients />
+        <OurServices />
+        <WhyChooseUs/>
+        {/* <ScrollComponent /> */}
+        {/* <Team /> */}
         <JoinWaitlist/>
       </div>
 
