@@ -21,7 +21,7 @@ export const AcmeLogo = () => {
   return (
     <>
       <div>
-        <img src={logo} alt="Logo" className="w-[100px]"/>
+        <img src={logo} alt="Logo" className="w-[100px] rounded-md"/>
       </div>
     </>
   );

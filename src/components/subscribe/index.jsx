@@ -14,13 +14,16 @@ const JoinWaitlist = () => {
         uk-scrollspy="cls: uk-animation-slide-top; target: .uk-card; delay: 300; repeat: true"
       >
         <div className=" max-w-[800px] mx-auto px-5 text-center uk-card">
-          <h2 className="text-2xl md:text-4xl font-bold text-black-500 mb-4">
-            Have a Project In Mind?
-          </h2>
-          <p className="text-xl md:text-xl text-white mb-8 font-dmsans">
-            Let's building your next gorgeous complex now
-          </p>
-          <div className="flex flex-col min-lg:flex-row gap-4 justify-center items-center mt-2 ">
+          <div className=" bg-slate-200 p-5 rounded-lg mb-5  border-l-emerald-400 border-l-5 ">
+            <h2 className="text-2xl md:text-4xl font-bold text-black-500 mb-4">
+              Have a Project In Mind?
+            </h2>
+            <p className="text-xl md:text-xl  mb-8 font-dmsans">
+              Let's build your next gorgeous complex now
+            </p>
+          </div>
+
+          <div className="flex flex-col min-lg:flex-row gap-4 justify-center items-center mt-2 bg-slate-200 p-5 rounded-lg mb-5  border-l-emerald-400 border-l-5 ">
             <div>{<MdOutlineHomeWork size={30} color="black" />}</div>
             <p className="text-black">
               House No-C-560, Aman Apartment, Madanpur Khadar Extension, South
@@ -28,11 +31,11 @@ const JoinWaitlist = () => {
             </p>
           </div>
 
-          <div className="flex flex-col min-lg:flex-row gap-4 justify-center items-center mt-2">
+          <div className="flex flex-col min-lg:flex-row gap-4 justify-center items-center mt-2 bg-slate-200 p-5 rounded-lg mb-5  border-l-emerald-400 border-l-5 ">
             <div>{<MdOutlineMarkEmailRead size={30} />}</div>
             <p className="text-black">Info.msdengg@gmail.com</p>
           </div>
-          <div className="flex flex-col min-lg:flex-row gap-4 justify-center items-center mt-2 ">
+          <div className="flex flex-col min-lg:flex-row gap-4 justify-center items-center mt-2 bg-slate-200 p-5 rounded-lg mb-5  border-l-emerald-400 border-l-5  ">
             <div>{<FaPhoneFlip size={30} />}</div>
             <p className="text-black">+91-91999-79781 </p>
             <p className="text-black">+91-99340-35253</p>
